@@ -21,7 +21,7 @@ public:
 		this->name = name;
 	}
 
-	void intro()
+	void intro() override
 	{
 		cout << name << "학생입니다." << endl;
 	}
@@ -42,7 +42,7 @@ public:
 		this->name = name;
 	}
 
-	void intro()
+	void intro() override
 	{
 		cout << name << "선생입니다." << endl;
 	}
