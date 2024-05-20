@@ -81,7 +81,7 @@ int main()
 				snackBasket.push_back(new Chocolate(input));
 				break;
 			case 0:
-				cout << "과자 바구니에 담긴 간식의 개수는 "<< Snack::snackCount << "개 입니다." << endl << endl;
+				cout << endl << "과자 바구니에 담긴 간식의 개수는 "<< Snack::snackCount << "개 입니다." << endl << endl;
 				cout << "과자 바구니에 담긴 간식 확인하기!" << endl;
 
 				for (auto snack : snackBasket)
