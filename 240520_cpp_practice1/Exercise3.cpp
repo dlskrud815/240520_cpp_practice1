@@ -5,12 +5,15 @@ using namespace std;
 
 class Snack
 {
-public:
-	Snack() {}
-
+protected:
 	static int snackCount;
+
+public:
+	Snack() { snackCount++; }
+	virtual ~Snack() { snackCount--; }
+
 	virtual void printSnack() {}
-	
+	static int getSnackCount() { return snackCount; }
 };
 
 class Candy : public Snack
@@ -19,12 +22,9 @@ private:
 	string flavor;
 
 public:
-	Candy() {}
-
-	Candy(string input) 
-	{ 
+	Candy(string input)
+	{
 		this->flavor = input;
-		snackCount++; 
 	}
 
 	void printSnack() override
@@ -39,12 +39,9 @@ private:
 	string shape;
 
 public:
-	Chocolate() {}
-
 	Chocolate(string input)
 	{
 		this->shape = input;
-		snackCount++; 
 	}
 
 	void printSnack() override
@@ -79,7 +76,7 @@ int main()
 			snackBasket.push_back(new Chocolate(input));
 			break;
 		case 0:
-			cout << endl << "과자 바구니에 담긴 간식의 개수는 "<< Snack::snackCount << "개 입니다." << endl << endl;
+			cout << endl << "과자 바구니에 담긴 간식의 개수는 " << Snack::getSnackCount() << "개 입니다." << endl << endl;
 			cout << "과자 바구니에 담긴 간식 확인하기!" << endl;
 
 			for (auto snack : snackBasket)
