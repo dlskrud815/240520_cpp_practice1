@@ -74,13 +74,11 @@ int main()
 		//다운캐스팅
 		if (i < 2)
 		{
-			Candy* candy = (Candy*)snackBasket[i];
-			candy->printSnack();
+			((Candy*)snackBasket[i])->printSnack();
 		}
 		else
 		{
-			Chocolate* chocolate = (Chocolate*)snackBasket[i];
-			chocolate->printSnack();
+			((Chocolate*)snackBasket[i])->printSnack();
 		}
 	}
 
