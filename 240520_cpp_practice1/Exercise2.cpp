@@ -80,13 +80,9 @@ int main()
 	cout << endl;
 
 	//각 클래스의 고유 함수 실행
-	Teacher* t = (Teacher*)pList[0];
-	Student* s1 = (Student*)pList[1];
-	Student* s2 = (Student*)pList[2];
-
-	t->teach();
-	s1->learn();
-	s2->learn();
+	((Teacher*)pList[0])->teach();
+	((Student*)pList[1])->learn();
+	((Student*)pList[2])->learn();
 
 	delete teacher;
 	delete student1;
